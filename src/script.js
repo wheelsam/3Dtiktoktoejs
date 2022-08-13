@@ -7,6 +7,7 @@ let INTERSECTED;
 /**
  * Base
  */
+
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 
