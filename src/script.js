@@ -1,6 +1,10 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import * as lil from 'lil-gui'
+
+// Debug
+const gui = new lil.GUI()
 
 let INTERSECTED;
 
@@ -42,6 +46,13 @@ const mesh7 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
 const mesh8 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
 mesh7.position.y = -dstep; mesh7.position.x = dstep; 
 mesh8.position.y = -dstep; mesh8.position.x = -dstep;
+
+// Set Color Example
+mesh0.material.color.setHex(0xff0000) 
+mesh1.material.color.setRGB(0,255,0) 
+mesh2.material.color = new THREE.Color(0x0000ff)
+mesh3.material.color.set('purple')
+mesh4.material.color.set('rgb(255,255,0)')
 
 const mz1 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
 const mz2 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
@@ -126,8 +137,11 @@ window.addEventListener('resize', () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
+// Gui Example Position
+gui.add(mesh0.position, 'x').min(-10).max(10).step(0.001)
+
 // Camera
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000)
 camera.position.z = 4
 scene.add(camera)
 
