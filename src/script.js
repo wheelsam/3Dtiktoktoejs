@@ -26,94 +26,108 @@ const material = new THREE.MeshBasicMaterial({
     wireframe: false
 })
 
-const mesh1 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mesh0 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mesh2 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-mesh1.position.x = dstep
-mesh2.position.x = -dstep
 
-const mesh3 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mesh4 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-mesh3.position.y = dstep
-mesh4.position.y = -dstep
+for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+        for (let k = 0; k < 3; k++) {
+            const m = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial())
+            m.position.set(dstep * (i - 1), dstep * (j - 1), dstep * (k - 1));
+            scene.add(m);
+        }
+    }
+    
+}
 
-const mesh5 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mesh6 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-mesh5.position.y = dstep; mesh5.position.x = dstep; 
-mesh6.position.y = dstep; mesh6.position.x = -dstep; 
+/**
+// const mesh1 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mesh0 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mesh2 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// mesh1.position.x = dstep
+// mesh2.position.x = -dstep
 
-const mesh7 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mesh8 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-mesh7.position.y = -dstep; mesh7.position.x = dstep; 
-mesh8.position.y = -dstep; mesh8.position.x = -dstep;
+// const mesh3 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mesh4 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// mesh3.position.y = dstep
+// mesh4.position.y = -dstep
 
-// Set Color Example
-mesh0.material.color.setHex(0xff0000) 
-mesh1.material.color.setRGB(0,255,0) 
-mesh2.material.color = new THREE.Color(0x0000ff)
-mesh3.material.color.set('purple')
-mesh4.material.color.set('rgb(255,255,0)')
+// const mesh5 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mesh6 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// mesh5.position.y = dstep; mesh5.position.x = dstep; 
+// mesh6.position.y = dstep; mesh6.position.x = -dstep; 
 
-const mz1 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz2 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz3 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz4 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz5 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz6 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz7 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz8 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz9 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mesh7 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mesh8 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// mesh7.position.y = -dstep; mesh7.position.x = dstep; 
+// mesh8.position.y = -dstep; mesh8.position.x = -dstep;
 
-const mz10 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz20 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz30 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz40 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz50 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz60 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz70 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz80 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
-const mz90 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// // Set Color Example
+// mesh0.material.color.setHex(0xff0000) 
+// mesh1.material.color.setRGB(0,255,0) 
+// mesh2.material.color = new THREE.Color(0x0000ff)
+// mesh3.material.color.set('purple')
+// mesh4.material.color.set('rgb(255,255,0)')
 
-mz1.position.x = mesh0.position.x; mz1.position.y = mesh0.position.y;
-mz2.position.x = mesh1.position.x; mz2.position.y = mesh1.position.y;
-mz3.position.x = mesh2.position.x; mz3.position.y = mesh2.position.y;
-mz4.position.x = mesh3.position.x; mz4.position.y = mesh3.position.y;
-mz5.position.x = mesh4.position.x; mz5.position.y = mesh4.position.y;
-mz6.position.x = mesh5.position.x; mz6.position.y = mesh5.position.y;
-mz7.position.x = mesh6.position.x; mz7.position.y = mesh6.position.y;
-mz8.position.x = mesh7.position.x; mz8.position.y = mesh7.position.y;
-mz9.position.x = mesh8.position.x; mz9.position.y = mesh8.position.y;
+// const mz1 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz2 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz3 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz4 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz5 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz6 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz7 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz8 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz9 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
 
-mz10.position.x = mesh0.position.x; mz10.position.y = mesh0.position.y; 
-mz20.position.x = mesh1.position.x; mz20.position.y = mesh1.position.y; 
-mz30.position.x = mesh2.position.x; mz30.position.y = mesh2.position.y; 
-mz40.position.x = mesh3.position.x; mz40.position.y = mesh3.position.y; 
-mz50.position.x = mesh4.position.x; mz50.position.y = mesh4.position.y; 
-mz60.position.x = mesh5.position.x; mz60.position.y = mesh5.position.y; 
-mz70.position.x = mesh6.position.x; mz70.position.y = mesh6.position.y; 
-mz80.position.x = mesh7.position.x; mz80.position.y = mesh7.position.y; 
-mz90.position.x = mesh8.position.x; mz90.position.y = mesh8.position.y; 
+// const mz10 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz20 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz30 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz40 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz50 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz60 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz70 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz80 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+// const mz90 = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial())
+
+// mz1.position.x = mesh0.position.x; mz1.position.y = mesh0.position.y;
+// mz2.position.x = mesh1.position.x; mz2.position.y = mesh1.position.y;
+// mz3.position.x = mesh2.position.x; mz3.position.y = mesh2.position.y;
+// mz4.position.x = mesh3.position.x; mz4.position.y = mesh3.position.y;
+// mz5.position.x = mesh4.position.x; mz5.position.y = mesh4.position.y;
+// mz6.position.x = mesh5.position.x; mz6.position.y = mesh5.position.y;
+// mz7.position.x = mesh6.position.x; mz7.position.y = mesh6.position.y;
+// mz8.position.x = mesh7.position.x; mz8.position.y = mesh7.position.y;
+// mz9.position.x = mesh8.position.x; mz9.position.y = mesh8.position.y;
+
+// mz10.position.x = mesh0.position.x; mz10.position.y = mesh0.position.y; 
+// mz20.position.x = mesh1.position.x; mz20.position.y = mesh1.position.y; 
+// mz30.position.x = mesh2.position.x; mz30.position.y = mesh2.position.y; 
+// mz40.position.x = mesh3.position.x; mz40.position.y = mesh3.position.y; 
+// mz50.position.x = mesh4.position.x; mz50.position.y = mesh4.position.y; 
+// mz60.position.x = mesh5.position.x; mz60.position.y = mesh5.position.y; 
+// mz70.position.x = mesh6.position.x; mz70.position.y = mesh6.position.y; 
+// mz80.position.x = mesh7.position.x; mz80.position.y = mesh7.position.y; 
+// mz90.position.x = mesh8.position.x; mz90.position.y = mesh8.position.y; 
 
 
-mz1.position.z = dstep; mz10.position.z = -dstep
-mz2.position.z = dstep; mz20.position.z = -dstep
-mz3.position.z = dstep; mz30.position.z = -dstep
-mz4.position.z = dstep; mz40.position.z = -dstep
-mz5.position.z = dstep; mz50.position.z = -dstep
-mz6.position.z = dstep; mz60.position.z = -dstep
-mz7.position.z = dstep; mz70.position.z = -dstep
-mz8.position.z = dstep; mz80.position.z = -dstep
-mz9.position.z = dstep; mz90.position.z = -dstep
+// mz1.position.z = dstep; mz10.position.z = -dstep
+// mz2.position.z = dstep; mz20.position.z = -dstep
+// mz3.position.z = dstep; mz30.position.z = -dstep
+// mz4.position.z = dstep; mz40.position.z = -dstep
+// mz5.position.z = dstep; mz50.position.z = -dstep
+// mz6.position.z = dstep; mz60.position.z = -dstep
+// mz7.position.z = dstep; mz70.position.z = -dstep
+// mz8.position.z = dstep; mz80.position.z = -dstep
+// mz9.position.z = dstep; mz90.position.z = -dstep
 
-scene.add(mesh0); scene.add(mz1); scene.add(mz10)
-scene.add(mesh1); scene.add(mz2); scene.add(mz20)
-scene.add(mesh2); scene.add(mz3); scene.add(mz30)
-scene.add(mesh3); scene.add(mz4); scene.add(mz40)
-scene.add(mesh4); scene.add(mz5); scene.add(mz50)
-scene.add(mesh5); scene.add(mz6); scene.add(mz60)
-scene.add(mesh6); scene.add(mz7); scene.add(mz70)
-scene.add(mesh7); scene.add(mz8); scene.add(mz80)
-scene.add(mesh8); scene.add(mz9); scene.add(mz90)
+// scene.add(mesh0); scene.add(mz1); scene.add(mz10)
+// scene.add(mesh1); scene.add(mz2); scene.add(mz20)
+// scene.add(mesh2); scene.add(mz3); scene.add(mz30)
+// scene.add(mesh3); scene.add(mz4); scene.add(mz40)
+// scene.add(mesh4); scene.add(mz5); scene.add(mz50)
+// scene.add(mesh5); scene.add(mz6); scene.add(mz60)
+// scene.add(mesh6); scene.add(mz7); scene.add(mz70)
+// scene.add(mesh7); scene.add(mz8); scene.add(mz80)
+// scene.add(mesh8); scene.add(mz9); scene.add(mz90)
+ */
 
 console.log(canvas.firstChild)
 
@@ -137,8 +151,8 @@ window.addEventListener('resize', () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
-// Gui Example Position
-gui.add(mesh0.position, 'x').min(-10).max(10).step(0.001)
+// // Gui Example Position
+// gui.add(mesh0.position, 'x').min(-10).max(10).step(0.001)
 
 // Camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000)
